@@ -1,13 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
-    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.49.0.2225" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,9 +19,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VC.Commom.IoC\VC.Commom.IoC.csproj" />
     <ProjectReference Include="..\VC.Common\VC.Commom.csproj" />
-    <ProjectReference Include="..\VC.Services\VC.Services.csproj" />
+    <ProjectReference Include="..\VC.Domain\VC.Domain.csproj" />
   </ItemGroup>
 
 </Project>

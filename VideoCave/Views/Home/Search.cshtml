@@ -1,0 +1,24 @@
+﻿@model IEnumerable<VideoViewModel>
+
+@{
+    ViewData["Title"] = "Resultado";
+    var text = ViewData["searchText"];
+}
+
+<div>
+    <h1 class="display-4 text-center">Olha só o que eu encontrei:</h1>
+    <table class="table table-borderless table-sm">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    <img src=@item.ThumbnailUrl />
+                </td>
+                <td class="align-middle">
+                    <strong>Vídeo:</strong> @item.Titulo
+                </td>
+                <td class="align-middle">@text</td>
+            </tr>
+        }
+    </table>
+</div>

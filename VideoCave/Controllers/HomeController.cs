@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using VC.Services.Interfaces;
+using VC.Services.Models;
 using VideoCave.Models;
 
 namespace VideoCave.Controllers
@@ -12,10 +10,12 @@ namespace VideoCave.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ISearchService _searchService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ISearchService searchService, ILogger<HomeController> logger)
         {
             _logger = logger;
+            _searchService = searchService;
         }
 
         public IActionResult Index()
@@ -23,9 +23,19 @@ namespace VideoCave.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Details(string id)
         {
-            return View();
+            var video = _searchService.ObterVideo(id);
+
+            return View(video);
+        }
+
+        [HttpPost]
+        public IActionResult Search(SearchParametersViewModel model)
+        {
+            var videos = _searchService.Procurar(model);
+            ViewData["searchText"] = model.SearchType.ToString();
+            return View(videos);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

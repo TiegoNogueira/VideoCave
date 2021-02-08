@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Google.Apis.YouTube.v3" Version="1.49.0.2225" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VC.Common\VC.Commom.csproj" />
+    <ProjectReference Include="..\VC.Domain\VC.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
