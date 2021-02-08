@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoCave", "VideoCave\VideoCave.csproj", "{3261DA42-3BBE-49DD-B25A-7BA511DB48B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3261DA42-3BBE-49DD-B25A-7BA511DB48B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3261DA42-3BBE-49DD-B25A-7BA511DB48B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3261DA42-3BBE-49DD-B25A-7BA511DB48B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3261DA42-3BBE-49DD-B25A-7BA511DB48B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1C2B62E-2767-4E3C-8676-C0B2A12CED7E}
+	EndGlobalSection
+EndGlobal
