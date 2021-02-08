@@ -23,6 +23,7 @@ namespace VideoCave.Controllers
             return View();
         }
 
+        [Route("Home/Details/{id}")]
         public IActionResult Details(string id)
         {
             var video = _searchService.ObterVideo(id);

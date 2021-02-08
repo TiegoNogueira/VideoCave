@@ -17,7 +17,7 @@
                 <td class="align-middle">
                     <strong>Vídeo:</strong> @item.Titulo
                 </td>
-                <td class="align-middle">@text</td>
+                <td class="align-middle"><a asp-controller="Home" asp-action="Details" asp-route-id="@item.Id" class="btn btn-secondary">Detalhes</a></td>
             </tr>
         }
     </table>

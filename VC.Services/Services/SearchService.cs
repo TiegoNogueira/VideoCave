@@ -37,9 +37,9 @@ namespace VC.Services.Services
 
         public VideoViewModel ObterVideo(string id)
         {
-            VideoViewModel video = new VideoViewModel();
+            var video = _videoRepository.ObterPorId(id);
 
-            return video;
+            return _mapper.Map<Video, VideoViewModel>(video);
         }
 
         private IEnumerable<VideoViewModel> ProcurarVideos(string searchText)
@@ -72,7 +72,11 @@ namespace VC.Services.Services
                     ThumbnailhqUrl = video.Snippet.Thumbnails.High.Url
                 };
 
-                _videoRepository.Incluir(_mapper.Map<VideoViewModel, Video>(newVideo));
+                var jaExiste = _videoRepository.ObterPorId(newVideo.Id);
+
+                if(jaExiste == null)
+                    _videoRepository.Incluir(_mapper.Map<VideoViewModel, Video>(newVideo));
+
                 list.Add(newVideo);
             }
 
